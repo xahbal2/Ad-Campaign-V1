@@ -5,10 +5,10 @@ import java.util.Set;
 public class Campaign {
     private final Integer campaignId;
     private final Set<String> targetedCountries;
-    private final Set<String> targetedDomains ;
+    private final Set<String> targetedDomains;
     private final Set<Dimension> dimensions;
 
-    private Campaign(CampaignBuilder builder){
+    private Campaign(CampaignBuilder builder) {
         this.campaignId = builder.campaignId;
         this.dimensions = builder.dimensions;
         this.targetedCountries = builder.targetedCountries;
@@ -32,28 +32,32 @@ public class Campaign {
     }
 
     public static class CampaignBuilder {
-        private  Integer campaignId;
-        private  Set<String> targetedCountries;
-        private  Set<String> targetedDomains ;
-        private  Set<Dimension> dimensions;
+        private Integer campaignId;
+        private Set<String> targetedCountries;
+        private Set<String> targetedDomains;
+        private Set<Dimension> dimensions;
 
-        public CampaignBuilder campaignId(int id){
+        public CampaignBuilder campaignId(int id) {
             this.campaignId = id;
             return this;
         }
-        public CampaignBuilder targetedCountries(Set<String> countries){
+
+        public CampaignBuilder targetedCountries(Set<String> countries) {
             this.targetedCountries = countries;
             return this;
         }
-        public CampaignBuilder targetedDomains(Set<String> targetedDomains){
+
+        public CampaignBuilder targetedDomains(Set<String> targetedDomains) {
             this.targetedDomains = targetedDomains;
             return this;
         }
-        public CampaignBuilder dimensions(Set<Dimension> dimensions){
+
+        public CampaignBuilder dimensions(Set<Dimension> dimensions) {
             this.dimensions = dimensions;
             return this;
         }
-        public Campaign build(){
+
+        public Campaign build() {
             Campaign campaign = new Campaign(this);
             return campaign;
         }

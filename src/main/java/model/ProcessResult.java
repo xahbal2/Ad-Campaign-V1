@@ -19,7 +19,7 @@ public class ProcessResult {
         this.processedTimeMilliseconds = processedTimeMilliseconds;
     }
 
-    public String toJsonString(){
+    public String toJsonString() {
         ObjectMapper mapper = new ObjectMapper();
         try {
             String jsonString = mapper.writeValueAsString(this);

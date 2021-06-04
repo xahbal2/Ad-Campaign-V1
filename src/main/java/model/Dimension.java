@@ -26,7 +26,7 @@ public class Dimension {
     }
 
 
-    public Boolean equals(Dimension dimension){
+    public Boolean equals(Dimension dimension) {
         return (this.height == dimension.height && this.length == dimension.length) || (this.length == dimension.height && this.height == dimension.length);
     }
 }
