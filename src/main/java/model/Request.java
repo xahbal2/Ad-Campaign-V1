@@ -1,11 +1,9 @@
 package model;
 
-import java.util.Set;
-
 public class Request {
     private int requestId;
     private String targetedCountries;
-    private String targetedDomains ;
+    private String targetedDomains;
     private Dimension dimensions;
 
     public Request(int requestId, String targetedCountries, String targetedDomains, Dimension dimensions) {

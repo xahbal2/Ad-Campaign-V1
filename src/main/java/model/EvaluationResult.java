@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 
-public class EvaluationResult{
+public class EvaluationResult {
     private int campaignId;
     private List<Integer> qualifiedRequests;
 
