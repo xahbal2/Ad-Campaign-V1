@@ -31,7 +31,11 @@ public class Process {
     private static EvaluationResult evaluate(List<Request> requests, Campaign c) {
         List<Integer> qualifiedRequests = new ArrayList<>();
         for (Request r : requests) {
-            if (dimensionMatches(c.getDimensions(), r.getDimensions()) && c.getTargetedCountries().contains(r.getTargetedCountries()) && c.getTargetedDomains().contains(r.getTargetedDomains())) {
+            if (
+                    dimensionMatches(c.getDimensions(), r.getDimensions())
+                            && c.getTargetedCountries().contains(r.getTargetedCountries())
+                            && domainMatches(c.getTargetedDomains(), r.getTargetedDomains())
+            ) {
                 qualifiedRequests.add(r.getRequestId());
             }
         }
@@ -42,6 +46,15 @@ public class Process {
     private static boolean dimensionMatches(Set<Dimension> dimensionsSet, Dimension dimension) {
         for (Dimension d : dimensionsSet) {
             if (d.equals(dimension)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean domainMatches(Set<String> domainList, String domain) {
+        for (String d : domainList) {
+            if (domain.contains(d)) {
                 return true;
             }
         }
