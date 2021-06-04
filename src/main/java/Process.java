@@ -24,7 +24,6 @@ public class Process {
             evaluationResults.add(evaluate(requests, c));
         }
 
-
         return new ProcessResult(campaigns, evaluationResults, requests.size(), System.currentTimeMillis() - start);
     }
 
