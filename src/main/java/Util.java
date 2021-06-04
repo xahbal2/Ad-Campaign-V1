@@ -13,6 +13,10 @@ public class Util {
     private static final String DOMAIN_GOOGLE = "google.com";
     private static final String DOMAIN_FACEBOOK = "facebook.com";
     private static final String DOMAIN_TWITTER = "twitter.com";
+    private static final String DOMAIN_FROM_REQUEST_1 = "www.facebook.com/somthingaskfhjsldfgkjsodith";
+    private static final String DOMAIN_FROM_REQUEST_2 = "www.google.com/somthingaskfhjsldfgkjsodith";
+    private static final String DOMAIN_FROM_REQUEST_3 = "www.apple.com/somthingaskfhjsldfgkjsodith";
+
     private static final List<String> LIST_OF_DOMAINS = Arrays.asList(DOMAIN_APPLE, DOMAIN_GOOGLE, DOMAIN_FACEBOOK, DOMAIN_TWITTER);
     private static final Set<String> DOMAINS1 = new HashSet<>(LIST_OF_DOMAINS.subList(0, 1));
     private static final Set<String> DOMAINS2 = new HashSet<>(LIST_OF_DOMAINS.subList(0, 2));
@@ -71,9 +75,9 @@ public class Util {
     }
 
     public static List<Request> buildSomeRequests() {
-        Request r1 = new Request(0, COUNTRY_CA, DOMAIN_APPLE, D1);
-        Request r2 = new Request(1, COUNTRY_US, DOMAIN_GOOGLE, D2);
-        Request r3 = new Request(2, COUNTRY_IT, DOMAIN_FACEBOOK, D3);
+        Request r1 = new Request(0, COUNTRY_CA, DOMAIN_FROM_REQUEST_1, D1);
+        Request r2 = new Request(1, COUNTRY_US, DOMAIN_FROM_REQUEST_2, D2);
+        Request r3 = new Request(2, COUNTRY_IT, DOMAIN_FROM_REQUEST_3, D3);
 
         return Arrays.asList(r1, r2, r3);
 
