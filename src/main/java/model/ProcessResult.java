@@ -22,7 +22,7 @@ public class ProcessResult {
     public String toJsonString() {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            String jsonString = mapper.writeValueAsString(this);
+            String jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(this);
 
             return jsonString;
         } catch (JsonProcessingException e) {
